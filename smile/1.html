@@ -1,0 +1,22 @@
+<script>
+    function countSmileys(arr) {
+  let a = [':)', ':D', ';-D', ':~)']
+  let number = 0
+  console.log(arr)
+  for(let code of a){
+    while(arr.indexOf(code)>=0){
+        console.log(code)
+      arr.splice(arr.indexOf(code),1)
+      number ++
+    }
+  }
+  return number
+}
+console.log(countSmileys([':D',':~)',';~D',':)']))
+</script>
+
+<!-- function countSmileys(arr) {
+    return arr.filter(x => /^[:;][-~]?[)D]$/.test(x)).length;
+  } -->
+
+  <!-- https://www.codewars.com/kata/583203e6eb35d7980400002a/solutions/javascript -->

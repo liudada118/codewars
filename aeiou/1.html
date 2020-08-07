@@ -1,0 +1,20 @@
+<script>
+    function solve(s){
+    let aee = 'aeiou'
+    let arr = []
+    let i = 0
+    for (let a of s){
+      if(aee.includes(a)){
+        //   console.log(aee,a)
+        arr.push(a)
+      }else{
+        if(i<arr.length){
+          i = arr.length
+        }
+        arr = []  
+      }
+    }
+   return i;
+  }
+  console.log(solve('daeiousdfdas'))
+</script>

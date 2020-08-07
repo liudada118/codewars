@@ -1,0 +1,25 @@
+<script>
+    function solution(str) {
+        let i = 0, b = '', arr = []
+        if (str.length % 2 != 0) {
+            str += '_'
+        }
+        console.log(str)
+        for (let a of str) {
+            b += a
+            i++
+            if (i > 1) {
+                arr.push(b)
+                i = 0
+                b = ''
+                console.log(i, b)
+            }
+        }
+        return arr
+    }
+    console.log(solution("abcdefg"))
+
+//     function solution(str) {
+//   return (str.length % 2 ? str + '_' : str).match(/../g);
+// }
+</script>

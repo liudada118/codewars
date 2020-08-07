@@ -1,0 +1,51 @@
+<script>
+    function incrementString(strng) {
+        // return incrementedString
+        let a = '', b = '', c = 0
+        if (strng == '') {
+            return '1'
+        }
+        for (let i = 0; i < strng.length; i++) {
+            let dd = parseInt(strng[i])
+            console.log(dd)
+            if (dd == 0) {
+                if (a.length == 0) {
+                    b += strng[i]
+                } if (dd > 0) {
+                    a += strng[i]
+                }
+            } else if (dd >= 0) {
+                a += strng[i]
+            } else 
+            {
+                b += strng[i]
+            }
+        }
+        if(a.length==0){
+            c =1
+            if(b[b.length-1]=='0'){
+            b = b.substring(0,b.length-1)
+            return b+1
+        }
+        }else{
+            c = parseInt(a) + 1
+        }
+        if(b.includes('0')){
+            if(JSON.stringify(c).length>a.length){  
+                b= b.substring(0,b.length-1)
+            }
+            
+        }
+        return b + c
+    }
+    console.log(incrementString("foobar099"))
+</script>
+
+
+<!-- function incrementString(input) {
+    if(isNaN(parseInt(input[input.length - 1]))) return input + '1';
+    return input.replace(/(0*)([0-9]+$)/, function(match, p1, p2) {
+      var up = parseInt(p2) + 1;
+      return up.toString().length > p2.length ? p1.slice(0, -1) + up : p1 + up;
+    });
+  } -->

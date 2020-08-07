@@ -1,0 +1,34 @@
+<script>
+    function solution(list) {
+        // TODO: complete solution
+        let a = [], b = [], c = []
+        for (let i = 0; i < list.length; i++) {
+            if (a.length == 0) {
+                a.push(list[i])
+            } else if (a[a.length - 1] + 1 == list[i]) {
+                a.push(list[i])
+            } else {
+                if (a.length == 1) {
+                    b.push(a[0])
+                } else if (a.length == 2) {
+                    b.push(a[0])
+                    b.push(a[1])
+                }
+                else {
+                    b.push(`${a[0]}-${a[a.length - 1]}`)
+                }
+                a = []
+                a.push(list[i])
+            }
+        }
+        if (a.length == 1) {
+            b.push(a[0])
+        } else if (a.length == 2) {
+            b.push(a[0])
+            b.push(a[1])
+        } else {
+            b.push(`${a[0]}-${a[a.length - 1]}`)
+        } return b.join(',')
+    }
+    console.log(solution([-64,-62,-59,-58,-55,-53,-52,-49,-47,-44,-42,-40,-37]))
+</script>

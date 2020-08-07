@@ -1,0 +1,50 @@
+<script>
+    function perimeter(n) {
+        //     return ... fib...
+        if(n ==     0){
+            return 4
+        }
+        let arr = [1, 1]
+        let d = 0
+        let arr1 = [1, 1]
+        for (let i = 0; i < n-1; i++) {
+            let a = 0
+            for (let code of arr1) {
+                a += code
+            }
+            console.log(arr1,a)
+            arr1.splice(0, 1)
+            arr1.push(a)
+            arr.push(a)
+        }
+        console.log(arr)
+        for (let code of arr) {
+            d += code
+        }
+        return d * 4
+    }
+    console.log(perimeter(5))
+</script>
+
+
+<!-- function fib(n) {
+    var a = 1, b = 1, tmp;
+    while (n-- > 0) {
+      tmp = a;
+      a = b;
+      b += tmp;
+    }
+    return a;
+  }
+  
+  function perimeter(n) {
+      return 4 * (fib(n + 2) -1)
+  } -->
+
+  <!-- function perimeter(n) {
+    let arr = [1, 1];
+    for(let i = 0; i < n - 1; i++) {
+      arr.push(arr[arr.length - 1] + arr[arr.length - 2]);
+    }
+    return 4 * arr.reduce((sum, num) => sum + num, 0);
+  } -->

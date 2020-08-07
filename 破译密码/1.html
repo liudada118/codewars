@@ -1,0 +1,24 @@
+<script>
+    var recoverSecret = function(triplets) {
+        let a = ''
+        for(let i = 0;i<triplets.length ; i++){
+            for(let code of triplets[i]){
+                console.log(a,code)
+                if(!a.includes(code)){
+                    a+=code
+                }
+            }
+        }
+        return a
+}
+console.log(recoverSecret([
+  ['t','u','p'],
+  ['w','h','i'],
+  ['t','s','u'],
+  ['a','t','s'],
+  ['h','a','p'],
+  ['t','i','s'],
+  ['w','h','s']
+]
+))
+</script>

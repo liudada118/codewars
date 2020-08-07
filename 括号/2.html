@@ -1,0 +1,13 @@
+<script>
+    var longestValidParentheses = function (s) {
+        let a = s
+        let number = 0
+        while (a.includes('()')) {
+            a = a.split('()')
+            // a = a.join('')
+            number++
+        }
+        return a
+    }
+    console.log(longestValidParentheses('(()())()()'))
+</script>

@@ -1,0 +1,27 @@
+<script>
+    function validParentheses(parens){
+  //TODO 
+  let a = parens
+  while(a.includes('()')){
+    a = a.split('()')
+    console.log(a)
+    a = a.join('')
+    console.log(a)
+  }
+  return a.length?false:true
+}
+console.log(validParentheses("(())"))
+</script>
+
+
+<!-- function validParentheses(parens){
+    var indent = 0;
+    
+    for (var i = 0 ; i < parens.length && indent >= 0; i++) {
+      indent += (parens[i] == '(') ? 1 : -1;    
+    }
+    
+    return (indent == 0);
+  } -->
+
+  <!-- codewars.com/kata/52774a314c2333f0a7000688/solutions/javascript -->

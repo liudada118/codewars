@@ -1,0 +1,131 @@
+<script>
+    function solution(roman){
+  // complete the solution by transforming the 
+  // string roman numeral into an integer
+  let a = 'MDCLXVI'
+  let add = 0
+  for(let b of a){
+    if(roman.includes(b)){
+      let c = roman.split(b)
+      if(c[0].length == 0){
+        if(b == 'M'){
+          add+=1000*(c.length-1)
+        }if(b == 'D'){
+          add+=500*(c.length-1)
+        }if(b == 'C'){
+          add+=100*(c.length-1)
+        }if(b == 'L'){
+          add+=50*(c.length-1)
+        }if(b == 'X'){
+          add+=10*(c.length-1)
+        }if(b == 'V'){
+          add+=5*(c.length-1)
+        }if(b == 'I'){
+          add+=1*(c.length-1)
+        }
+        for(let code of c[c.length-1]){
+          if(code == 'M'){
+          add+=1000
+        }if(code == 'D'){
+          add+=500
+        }if(code == 'C'){
+          add+=100
+        }if(code == 'L'){
+          add+=50
+        }if(code == 'X'){
+          add+=10
+        }if(code == 'V'){
+          add+=5
+        }if(code == 'I'){
+          add+=1
+        }
+        }
+      }
+      else{
+         if(b == 'M'){
+          add+=1000*(c.length-1)
+        }if(b == 'D'){
+          add+=500*(c.length-1)
+        }if(b == 'C'){
+          add+=100*(c.length-1)
+        }if(b == 'L'){
+          add+=50*(c.length-1)
+        }if(b == 'X'){
+          add+=10*(c.length-1)
+        }if(b == 'V'){
+          add+=5*(c.length-1)
+        }if(b == 'I'){
+          add+=1*(c.length-1)
+        }
+        for(let code of c[0]){
+           if(code == 'M'){
+          add-=1000
+        }if(code == 'D'){
+          add-=500
+        }if(code == 'C'){
+          add-=100
+        }if(code == 'L'){
+          add-=50
+        }if(code == 'X'){
+          add-=10
+        }if(code == 'V'){
+          add-=5
+        }if(code == 'I'){
+          add-=1
+        }
+        }
+        for(let code of c[c.length-1]){
+           if(code == 'M'){
+          add+=1000
+        }if(code == 'D'){
+          add+=500
+        }if(code == 'C'){
+          add+=100
+        }if(code == 'L'){
+          add+=50
+        }if(code == 'X'){
+          add+=10
+        }if(code == 'V'){
+          add+=5
+        }if(code == 'I'){
+          add+=1
+        }
+        }
+      }
+      break
+    }
+  }
+  return add
+}
+console.log(solution('XXI'))
+</script>
+
+<!-- function solution(roman){
+    var conversion = {M: 1000, CM: 900, D: 500, CD: 400, C: 100, XC: 90, L: 50, XL: 40, X: 10, IX: 9, V: 5, IV: 4, I: 1};
+    
+    return roman.match(/CM|CD|XC|XL|IX|IV|\w/g).reduce((accum, roman) => accum + conversion[roman], 0);
+ } -->
+
+ <!-- function solution(roman)
+{
+  var data = {M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1};
+  var numbers = roman.split('');
+  var sum = 0, i;
+
+  for(i = 0; i < numbers.length; i++)
+  {
+    if(data[numbers[i]] < data[numbers[i+1]])
+    {
+      sum += data[numbers[i+1]] - data[numbers[i]];
+      i++;
+    }
+    else
+    {
+      sum += data[numbers[i]];
+    }
+  }
+  
+  return sum;
+} -->
+
+<!-- https://www.codewars.com/kata/51b6249c4612257ac0000005/solutions/javascript -->
